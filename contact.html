@@ -60,28 +60,19 @@
         </nav>
     </header>
     <section role="main" class="wrap">
-        <h1 id="thanks">Thanks!</h1>
-        <form method="post" action="" accept-charset="UTF-8" id="contact-form">
-            <input type="hidden" name="action" value="contactForm/sendMessage">
-            <input type="hidden" name="redirect" value="contact/thanks">
-            <input id="honeypot" name="honeypot" type="text">
+        <form method="post" action="https://formspree.io/f/mbjwqnlp" accept-charset="UTF-8" id="contact-form">
 
             <h3>
-                <label for="fromName">Name</label>
+                <label for="email">Email</label>
             </h3>
-            <input id="fromName" type="text" name="fromName" value="">
-
-            <h3>
-                <label for="fromEmail">Email</label>
-            </h3>
-            <input id="fromEmail" type="email" name="fromEmail" value="">
+            <input id="email" type="email" name="email" value="">
 
             <h3>
                 <label for="message">Message</label>
             </h3>
             <textarea rows="4" cols="40" id="message" name="message"></textarea>
 
-            <input type="submit" value="Send">
+            <input type="submit" name="submit" value="Send">
         </form>
     </section>
 
