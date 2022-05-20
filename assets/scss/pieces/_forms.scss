@@ -1,0 +1,42 @@
+#contact-form {
+	padding: 82px 0;
+	label, input[type="text"], input[type="email"], textarea {
+		width: 100%;
+	}
+	input[type="text"], input[type="email"], textarea, input[type="submit"] {
+		margin-bottom: 28px;
+		padding: 10px;
+		border: 1px solid transparentize($white,.75);
+		background: transparent;
+		border-radius: 4px;
+		@include transition(background-color .25s ease, border-color .25s ease);
+		&:focus {
+			border: 1px solid $white;
+			background-color: transparentize($white,.75);
+		}
+	}
+	input[type="submit"] {
+		margin-bottom: 0;
+		padding: 10px 20px;
+		&:hover {
+			border: 1px solid $white;
+			background-color: transparentize($white,.75);
+			cursor: pointer;
+		}
+		&:active {
+			border: 1px solid $white;
+			background-color: $white;
+			color: $darkgray;
+		}
+	}
+	#honeypot {
+		display: none;
+	}
+}
+
+#thanks {
+	display: none;
+	&.active {
+		display: block;
+	}
+}

@@ -1,0 +1,187 @@
+/*-------------------------------------------
+  Colors
+-------------------------------------------*/
+
+$darkgray: #242424;
+$white: #fff;
+$red: #AC0E30;
+$green: #08D794;
+
+/*-------------------------------------------
+  Typography
+-------------------------------------------*/
+
+html {
+	font-family: "source-sans-pro",sans-serif;
+	font-weight: 400;
+	font-size: 62.5%;
+	height: 100%;
+}
+
+h1 {
+	font-weight: 200;
+	@include font-size(8.1);
+	line-height: 126%;
+	@media screen and (max-width: 960px) {
+		@include font-size(4);
+	}
+	@media screen and (max-width: 568px) {
+		@include font-size(2.8);
+	}
+	#home &, #blog &, #contact & {
+		color: $white;
+	}
+	#mind-vault & {
+		color: $red;
+	}
+	#how-many-characters & {
+		color: $green;
+	}
+	#blog &, #contact & {
+		margin: 82px 0 32px;
+	}
+}
+
+#top {
+	@include font-size(2);
+	line-height: 100%;
+	color: $white;
+	@media screen and (max-width: 767px) {
+		@include font-size(1.5);
+	}
+	.current a {
+		#home &, #blog &, #contact & {
+			color: $darkgray;
+		}
+		#mind-vault & {
+			color: $red;
+		}
+		#how-many-characters & {
+			color: $green;
+		}
+	}
+}
+
+#launchpad {
+	@include font-size(3);
+	color: $white;
+	@media screen and (max-width: 960px) {
+		@include font-size(2);
+	}
+	@media screen and (max-width: 568px) {
+		@include font-size(1.5);
+	}
+}
+
+article {
+	p, ul, ol{
+		@include font-size(2.8);
+		line-height: 157%;
+		margin-bottom: 1.57em;
+		color: $darkgray;
+		@media screen and (max-width: 960px) {
+			@include font-size(2.2);
+		}
+		@media screen and (max-width: 568px) {
+			@include font-size(1.8);
+		}
+		#home & a, #blog & a, #contact & a {
+			text-decoration: underline;
+		}
+		#mind-vault & a {
+			color: $red;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		#how-many-characters & a {
+			color: $green;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		#mind-vault &, #how-many-characters & {
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+		#blog &, #contact & {
+			color: $white;
+		}
+		&.date {
+			@include font-size(2);
+			margin-bottom: 0;
+			@media screen and (max-width: 960px) {
+				@include font-size(1.8);
+			}
+			@media screen and (max-width: 568px) {
+				@include font-size(1.4);
+			}
+		}
+	}
+}
+
+footer p {
+	@include font-size(1.5);
+	line-height: 100%;
+	color: $darkgray;
+	@media screen and (max-width: 567px) {
+		text-align: center;
+	}
+	#home &, #blog &, #contact & {
+		color: $white;
+	}
+}
+
+label, .next, .prev {
+	@include font-size(2.8);
+	line-height: 157%;
+	margin-bottom: 1.57em;
+	color: $white;
+	@media screen and (max-width: 960px) {
+		@include font-size(2.2);
+	}
+	@media screen and (max-width: 568px) {
+		@include font-size(1.8);
+	}
+}
+
+.next, .prev {
+	&:hover {
+		text-decoration: underline;
+		color: $white;
+	}
+}
+
+input[type="text"], input[type="email"], textarea, input[type="submit"] {
+	@include font-size(2.8);
+	line-height: 157%;
+	margin-bottom: 1.57em;
+	color: $white;
+	@media screen and (max-width: 960px) {
+		@include font-size(2.2);
+	}
+	@media screen and (max-width: 568px) {
+		@include font-size(1.8);
+	}
+}
+
+/*-------------------------------------------
+  General
+-------------------------------------------*/
+
+#home, #blog, #contact {
+	background-color: $darkgray;
+}
+
+#home {
+	height: 100%;
+}
+
+.wrap {
+	width: 80%;
+	margin: 0 auto;
+	@media screen and (max-width: 767px) {
+		width: 90%;
+	}
+}

@@ -1,0 +1,225 @@
+/* Homepage */
+
+#launchpad {
+	overflow: auto;
+	height: 100%;
+	height: calc(100% - 120px);
+	@include background-image(manual-apps-logo-large, left, center);
+	background-size: 52% auto;
+	@media screen and (max-width: 960px) {
+		background-position: center 75px;
+		background-size: 75% auto;
+		height: auto;
+	}
+	.sidebar {
+		width: 34%;
+		height: 100%;
+		float: right;
+		@include display(flex);
+		ul {
+			width: 100%;
+			margin: auto;
+			list-style: none;
+			.no-flexbox.no-csstransforms &, .no-flexbox.csstransforms & {
+				position: absolute;
+				top: 50%;
+			}
+			.no-flexbox.no-csstransforms & {
+				margin-top: -112px;
+			}
+			.no-flexbox.csstransforms & {
+				@include transform(translateY(-50%));
+			}
+			@media screen and (max-width: 960px) {
+				@include display(flex);
+				.no-flexbox & {
+					overflow: auto;
+				}
+			}
+			li {
+				margin-bottom: 42px;
+				&:last-of-type {
+					margin-bottom: 0;
+				}
+				@media screen and (max-width: 960px) {
+					width: 50%;
+					.no-flexbox & {
+						float: left;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 960px) {
+			width: 100%;
+			height: auto;
+			float: none;
+			margin-top: 280px;
+		}
+		@media screen and (max-width: 568px) {
+			margin-top: 200px;
+		}
+	}
+}
+
+.app-launcher {
+	padding: 23px 0 23px 100px;
+	@include transition(color .15s ease);
+	@media screen and (max-width: 960px) {
+		padding: 100px 5% 23px;
+		text-align: center;
+		background-position: center top;
+	}
+	&.mind-vault {
+		display: block;
+		@include background-image(mind-vault-icon, left, center);
+		background-size: 76px;
+		&:hover {
+			color: $red;
+		}
+		@media screen and (max-width: 960px) {
+			background-position: center top;
+		}
+	}
+	&.how-many-characters {
+		display: block;
+		@include background-image(how-many-characters-icon, left, center);
+		background-size: 76px;
+		&:hover {
+			color: $green;
+		}
+		@media screen and (max-width: 960px) {
+			background-position: center top;
+		}
+	}
+}
+
+/* App Landing Pages */
+
+.masthead {
+	.wrap {
+		@include display(flex);
+		@include align-items(center);
+		padding: 68px 0 108px;
+		@media screen and (max-width: 568px) {
+			padding: 68px 0;
+		}
+		.no-flexbox & {
+			overflow: auto;
+			display: block;
+			img {
+				float: left;
+			}
+		}
+	}
+	#mind-vault & {
+		background-color: $red;
+	}
+	#how-many-characters & {
+		background-color: $green;
+	}
+}
+
+.iphone {
+	width: 21%;
+	height: 93.9849624%;
+	margin-right: 10%;
+	#mind-vault & {
+		width: 24.0805604%;
+		margin-right: 6.6549912%;
+	}
+	.no-flexbox & {
+		margin-top: 3%;
+	}
+}
+
+.ipad {
+	width: 69%;
+}
+
+article {
+	#mind-vault &, #how-many-characters & {
+		padding-bottom: 100px;
+		header {
+			padding: 35px 0;
+			position: relative;
+			h1 {
+				padding: 10px 160px 0 110px;
+				@media screen and (max-width: 960px) {
+					padding: 20px 160px 12px 110px;
+				}
+				@media screen and (max-width: 767px) {
+					padding: 25px 0 17px 96px;
+				}
+			}
+			a {
+				position: absolute;
+				right: 0;
+				top: 55%;
+				@include transform(translateY(-50%));
+				width: 148px;
+				height: 44px;
+				display: block;
+				@media screen and (max-width: 767px) {
+					position: relative;
+					@include transform(translateY(0));
+					margin-top: 36px;
+				}
+				.no-csstransforms & {
+					margin-top: -22px;
+				}
+				&:hover .white, &:hover .button-border {
+					fill: $red;
+				}
+				.no-svg & {
+					background: transparent url(../img/DownloadAppStore.png) no-repeat center center;
+					@include hidpi(2) {
+						background: transparent url(../img/DownloadAppStore@2x.png) no-repeat center center;
+						background-size: 148px 44px;
+					}
+				}
+			}
+		}	
+	}
+	#mind-vault & header h1 {
+		@include background-image(mind-vault-icon, left, center);
+		background-size: 76px;
+	}
+	#how-many-characters & header h1 {
+		@include background-image(how-many-characters-icon, left, center);
+		background-size: 76px;
+	}
+}
+
+/* Blog */
+
+#blog article {
+	width: 100%;
+	> * {
+		width: 100%;
+	}
+	&:last-of-type {
+		margin-bottom: 82px;
+	}
+	img {
+		width: 100%;
+		height: auto;
+		margin-bottom: 28px;
+	}
+	> div {
+		margin-bottom: 28px;
+	}
+	blockquote {
+		padding-left: 28px;
+		border-left: 1px solid transparentize($white,.75);
+	}
+}
+
+nav.pagination {
+	overflow: auto;
+	.next {
+		float: left;
+	}
+	.prev {
+		float: right;
+	}
+}
