@@ -30,6 +30,16 @@
         Typekit.load();
     } catch (e) {}
     </script>
+    <style>
+        #g-recaptcha-response {
+            display: block !important;
+            position: absolute;
+            margin: -50px 0 0 0 !important;
+            z-index: -999999;
+            opacity: 0;
+        }
+    </style>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <link rel="alternate" type="application/rss+xml" href="https://manual-apps.com/blog/feed/index.rss" title="Blog Feed"/>
     <link rel="stylesheet" type="text/css" href="/assets/css/screen.css"/>
@@ -71,12 +81,18 @@
                 <label for="message">Message</label>
             </h3>
             <textarea rows="4" cols="40" id="message" name="message"></textarea>
-
+            <div class="g-recaptcha" data-sitekey="6LdKyzkgAAAAAO-SGFTm7hxLFyp_VrHAcdU6PGX-"></div>
             <button id="my-form-button">Submit</button>
             <p id="my-form-status"></p>
         </form>
         <!-- Place this script at the end of the body tag -->
         <script>
+            window.onload = function() { 
+              var el = document.getElementById('g-recaptcha-response'); 
+              if (el) { 
+                el.setAttribute('required', 'required'); 
+              } 
+            }
             var form = document.getElementById("my-form");
             
             async function handleSubmit(event) {
